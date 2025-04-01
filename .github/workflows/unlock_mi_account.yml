@@ -1,0 +1,32 @@
+name: Unlock MI Account
+
+on:
+  schedule:
+    - cron: '50 15 * * *'
+  workflow_dispatch:
+
+jobs:
+  status:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4.2.2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5.5.0
+
+      - name: Install Dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          pip install requests ntplib pytz urllib3 icmplib
+
+      - name: Run Unlock Script
+        env:
+          COOKIE_VALUE: ${{ secrets.COOKIE_VALUE }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_TOPIC_ID: ${{ secrets.TELEGRAM_TOPIC_ID }}
+        run: |
+          export TERM=xterm
+          python3 -u "$GITHUB_WORKSPACE/unlock_mi.py"
