@@ -2,7 +2,7 @@ name: Unlock MI Account
 
 on:
   schedule:
-    - cron: '54 15 * * *'
+    - cron: '53 15 * * *'
   workflow_dispatch:
 
 jobs:
