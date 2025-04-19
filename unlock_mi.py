@@ -285,13 +285,13 @@ def main():
         }
 
         try:
-            max_wait_seconds = 15 * 60  # 15 minutes
+            max_wait_seconds = 5 * 60  # 5 minutes
             request_loop_start = time.time()
 
             while True:
                 if time.time() - request_loop_start > max_wait_seconds:
-                    print("[Timeout] Exceeded 15 minutes waiting for request approval")
-                    telegram("<b>✹ Unlock Bootloader</b>\n<i>-> Exceeded 15 minutes waiting for request approval.</i>")
+                    print("[Timeout] Exceeded 5 minutes waiting for request approval")
+                    telegram("<b>✹ Unlock Bootloader</b>\n<i>-> Exceeded 5 minutes waiting for request approval.</i>")
                     exit()
 
                 request_time = get_synchronized_beijing_time(start_beijing_time, start_timestamp)
