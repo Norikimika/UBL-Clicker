@@ -27,4 +27,4 @@ jobs:
           TELEGRAM_TOPIC_ID: ${{ secrets.TELEGRAM_TOPIC_ID }}
         run: |
           export TERM=xterm
-          python3 -u "$GITHUB_WORKSPACE/unlock_mi.py"
+          python3 -u ./unlock_mi.py
