@@ -19,6 +19,11 @@ jobs:
         with:
           python-version: '3.13.3'
 
+      - name: Install Dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          pip install -r ./requirements.txt
+
       - name: Run Unlock Script
         env:
           COOKIE_VALUE: ${{ secrets.COOKIE_VALUE }}

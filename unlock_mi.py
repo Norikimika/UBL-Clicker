@@ -1,6 +1,17 @@
 import subprocess
 import sys
 import os
+import hashlib
+import random
+import time
+from datetime import datetime, timezone, timedelta
+import ntplib
+import pytz
+import urllib3
+import json
+import statistics
+from icmplib import ping
+import requests
 
 # Arrays with servers
 ntp_servers = [
@@ -18,32 +29,6 @@ THREAD_ID = os.getenv("TELEGRAM_TOPIC_ID")
 
 VC = "500415"
 VN = "5.4.15"
-
-# Installing dependencies
-def install_package(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-
-required_packages = ["requests", "ntplib", "pytz", "urllib3", "icmplib"]
-for package in required_packages:
-    try:
-        __import__(package)
-    except ImportError:
-        print(f"Installing package {package}...")
-        install_package(package)
-
-os.system('cls' if os.name == 'nt' else 'clear')
-
-import hashlib
-import random
-import time
-from datetime import datetime, timezone, timedelta
-import ntplib
-import pytz
-import urllib3
-import json
-import statistics
-from icmplib import ping
-import requests
 
 # Send message to telegram
 def telegram(message, chat_id=CHAT_ID, thread_id=THREAD_ID):
