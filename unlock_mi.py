@@ -27,8 +27,8 @@ BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 THREAD_ID = os.getenv("TELEGRAM_TOPIC_ID")
 
-VC = "500415"
-VN = "5.4.15"
+VERSION_CODE = "500418"
+VERSION_NAME = "5.4.18"
 
 # Send message to telegram
 def telegram(message, chat_id=CHAT_ID, thread_id=THREAD_ID):
@@ -142,7 +142,7 @@ def check_unlock_status(session, cookie_value, device_id):
     try:
         url = "https://sgp-api.buy.mi.com/bbs/api/global/user/bl-switch/state"
         headers = {
-            "Cookie": f"new_bbs_serviceToken={cookie_value};versionCode={VC};versionName={VN};deviceId={device_id};"
+            "Cookie": f"new_bbs_serviceToken={cookie_value};versionCode={VERSION_CODE};versionName={VERSION_NAME};deviceId={device_id};"
         }
         
         response = session.make_request('GET', url, headers=headers)
@@ -266,7 +266,7 @@ def main():
 
         url = "https://sgp-api.buy.mi.com/bbs/api/global/apply/bl-auth"
         headers = {
-            "Cookie": f"new_bbs_serviceToken={cookie_value};versionCode={VC};versionName={VN};deviceId={device_id};"
+            "Cookie": f"new_bbs_serviceToken={cookie_value};versionCode={VERSION_CODE};versionName={VERSION_NAME};deviceId={device_id};"
         }
 
         try:
