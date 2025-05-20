@@ -27,8 +27,8 @@ BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 THREAD_ID = os.getenv("TELEGRAM_TOPIC_ID")
 
-VERSION_CODE = "500418"
-VERSION_NAME = "5.4.18"
+VERSION_CODE = "500419"
+VERSION_NAME = "5.4.19"
 
 # Send message to telegram
 def telegram(message, chat_id=CHAT_ID, thread_id=THREAD_ID):
