@@ -9,5 +9,6 @@ Automated Bootloader Unlock Application Submission.
 
 ## Approved
 - [Run 16](https://github.com/Norikimika/UBL-Clicker/actions/runs/14497183858)
+- [Run 58](https://github.com/Norikimika/UBL-Clicker/actions/runs/15304859582)
 
 ## [Original Post](https://4pda.to/forum/index.php?showtopic=721838&view=findpost&p=133301054)
